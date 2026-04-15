@@ -143,6 +143,12 @@ export default function Home() {
 npm install
 node apps/api/server.js
 
+cd ai-ide
+rm -rf node_modules package-lock.json
+npm install
+npm install express
+node apps/api/server.js
+
 
 // ===============================
 // DONE
