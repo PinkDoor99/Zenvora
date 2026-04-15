@@ -41,7 +41,7 @@ function createWindow() {
 app.whenReady().then(createWindow);
 
 ipcMain.handle("run-code", async (_, code) => {
-  const res = await axios.post("https://zenvora-oap0.onrender.com", { code });
+  const res = await axios.post("https://zenvora-oap0.onrender.com/run", { code });
   return res.data;
 });
 
