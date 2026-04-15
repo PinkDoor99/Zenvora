@@ -138,7 +138,10 @@ export default function Home() {
       <pre>{output}</pre>
     </div>
   );
-}
+}npx
+  fix-react2shell-next --fix
+
+
 
 // ===============================
 // DONE
