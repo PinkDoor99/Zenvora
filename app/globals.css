@@ -1,0 +1,104 @@
+/* Global Styles for Azure Theme */
+
+:root {
+  --azure-primary: #0078D4;
+  --azure-primary-hover: #106EBE;
+  --azure-primary-active: #0063B1;
+  --azure-secondary: #50E6FF;
+  --azure-success: #107C10;
+  --azure-warning: #FFB900;
+  --azure-danger: #E81123;
+  
+  --azure-foreground: #323232;
+  --azure-foreground-secondary: #606E7C;
+  --azure-foreground-tertiary: #959CA5;
+  
+  --azure-background: #FFFFFF;
+  --azure-background-secondary: #F7F7F7;
+  --azure-background-tertiary: #EDEBE9;
+  
+  --azure-border: #E1DFDD;
+  --azure-border-light: #D0CCCB;
+  
+  --azure-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --azure-shadow-md: 0 3.2px 7.2px rgba(0, 0, 0, 0.132), 0 0.6px 1.8px rgba(0, 0, 0, 0.108);
+  --azure-shadow-lg: 0 6.4px 14.4px rgba(0, 0, 0, 0.132);
+  --azure-shadow-xl: 0 12.8px 28.8px rgba(0, 0, 0, 0.132);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--azure-background);
+  color: var(--azure-foreground);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--azure-background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--azure-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azure-border-light);
+}
+
+/* Selection Styling */
+::selection {
+  background-color: var(--azure-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--azure-primary);
+  color: white;
+}
+
+/* Focus Visible */
+:focus-visible {
+  outline: 2px solid var(--azure-primary);
+  outline-offset: 2px;
+}
+
+/* Code Styling */
+code {
+  font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85em;
+}
+
+pre {
+  background-color: var(--azure-background-secondary);
+  border: 1px solid var(--azure-border);
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+/* Transitions */
+button, input, textarea, select {
+  transition: all 150ms ease;
+}

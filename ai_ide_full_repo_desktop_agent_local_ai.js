@@ -169,3 +169,4 @@ export default function Home() {
 // - Docker sandbox execution
 // - Basic frontend UI
 // ===============================
+git config pull.rebase false  # merge

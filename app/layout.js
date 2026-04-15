@@ -1,12 +1,32 @@
+import './globals.css';
+
 export const metadata = {
-  title: 'Zenvora',
-  description: 'Code execution IDE',
+  title: 'Zenvora - AI Code IDE',
+  description: 'Professional code execution IDE with AI assistance',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <style>{`
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            color: #323232;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          }
+          html, body, #__next {
+            height: 100%;
+          }
+        `}</style>
+      </head>
+      <body style={{ margin: 0, padding: 0 }}>{children}</body>
     </html>
   );
 }
