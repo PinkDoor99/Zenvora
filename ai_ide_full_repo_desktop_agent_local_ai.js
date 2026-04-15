@@ -139,7 +139,10 @@ export default function Home() {
       <pre>{output}</pre>
     </div>
   );
-}
+}rm -rf node_modules package-lock.json
+npm install
+node apps/api/server.js
+
 
 // ===============================
 // DONE
