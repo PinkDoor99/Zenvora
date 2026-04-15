@@ -142,6 +142,8 @@ export default function Home() {
 }rm -rf node_modules package-lock.json
 npm install
 node apps/api/server.js
+npm install -g npm@latest
+  npm -v
 
 cd ai-ide
 rm -rf node_modules package-lock.json
