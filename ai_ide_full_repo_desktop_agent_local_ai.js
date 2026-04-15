@@ -60,7 +60,7 @@ const app = express();
 app.use(express.json());
 
 // SAFE SANDBOX EXECUTION
-app.post("/run", (req, res) => {
+app.post("/run", (req, "res) => {
   const code = req.body.code;
 
   exec(`docker run --rm --network=none node:20 node -e \"${code}\"`, (err, stdout, stderr) => {
