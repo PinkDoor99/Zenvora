@@ -1,2 +1,0 @@
-# Zenvora
-AI integration platform
