@@ -88,12 +88,14 @@ app.post("/ai", async (req, res) => {
 app.listen(5000, () => console.log("API running"));
 
 // ---------- AGENT SYSTEM ----------
-async function agentLoop(goal) {
+async function agentLoop(goal, maxIterations = 10) {
   const fetch = (await import("node-fetch")).default;
 
   let context = "";
+  let iterations = 0;
 
-  while (true) {
+  while (iterations < maxIterations) {
+    iterations++;
     const plan = await fetch("http://localhost:5000/ai", {
       method: "POST",
       body: JSON.stringify({ prompt: `Goal: ${goal}\nNext step?` })
@@ -116,6 +118,8 @@ async function agentLoop(goal) {
       context += result.output;
     }
   }
+
+  return context;
 }
 
 // ---------- FRONTEND (SIMPLIFIED) ----------
@@ -132,14 +136,26 @@ export default function Home() {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
-      <textarea value={code} onChange={e => setCode(e.target.value)} />
-      <button onClick={run}>Run</button>
-      <pre>{output}</pre>
+    <div style={{ display: "flex", height: "100vh", gap: "10px", padding: "10px" }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <textarea
+          value={code}
+          onChange={e => setCode(e.target.value)}
+          style={{ flex: 1, fontFamily: "monospace", padding: "10px" }}
+          placeholder="Write your code here..."
+        />
+        <button onClick={run} style={{ padding: "10px", marginTop: "10px" }}>
+          Run Code
+        </button>
+      </div>
+      <div style={{ flex: 1, backgroundColor: "#f5f5f5", overflow: "auto" }}>
+        <pre style={{ margin: "10px", whiteSpace: "pre-wrap", wordWrap: "break-word" }}>
+          {output}
+        </pre>
+      </div>
     </div>
   );
-}npx
-  fix-react2shell-next --fix
+}
 
 
 
