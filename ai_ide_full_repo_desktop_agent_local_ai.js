@@ -41,7 +41,7 @@ function createWindow() {
 app.whenReady().then(createWindow);
 
 ipcMain.handle("run-code", async (_, code) => {
-  const res = await axios.post("https://zenvora-oap0.onrender.com/exec, { code });
+  const res = await axios.post("https://zenvora-oap0.onrender.com/run, { code });
   return res.data;
 });
 
@@ -53,6 +53,7 @@ contextBridge.exposeInMainWorld("api", {
 });
 
 // ---------- apps/api/server.js ----------
+app.post("/run", (req, res) => {
 const express = require("express");
 const { exec } = require("child_process");
 
@@ -60,7 +61,7 @@ const app = express();
 app.use(express.json());
 
 // SAFE SANDBOX EXECUTION
-app.post("/run", (req, "res) => {
+
   const code = req.body.code;
 
   exec(`docker run --rm --network=none node:20 node -e \"${code}\"`, (err, stdout, stderr) => {
