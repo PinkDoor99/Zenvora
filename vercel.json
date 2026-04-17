@@ -4,7 +4,13 @@
   "framework": "nextjs",
   "env": {
     "NEXT_PUBLIC_API_URL": {
-      "default": "http://localhost:5000"
+      "default": "https://zenvora-api.onrender.com"
+    }
+  },
+  "ignoreCommand": "git check-ignore -q $FILE",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
     }
   }
 }
