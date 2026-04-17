@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Zenvora - AI Code IDE',
-  description: 'Professional code execution IDE with AI assistance',
+  title: 'Zenvora - Hybrid Cloud AI IDE',
+  description: 'Professional code execution IDE with AI assistance, available as web app and desktop application',
 };
 
 export default function RootLayout({ children }) {
