@@ -1,0 +1,16 @@
+# Ignore server files for Vercel (frontend only)
+server.js
+lib/
+desktop/
+*.db
+.git
+npm-debug.log
+.env.local
+.env.*.local
+render.yaml
+amplify.yml
+staticwebapp.config.json
+DEPLOYMENT.md
+ai_ide_full_repo_desktop_agent_local_ai.js
+demo.js
+app/page.js.backup
