@@ -1,0 +1,12 @@
+# Ignore Next.js files for Render (backend only)
+.next/
+node_modules/
+app/
+pages/
+public/
+styles/
+vercel.json
+ampify.yml
+staticwebapp.config.json
+next.config.js
+.eslintrc.json
